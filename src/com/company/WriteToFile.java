@@ -5,14 +5,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import static com.company.Registration.newUser;
+public class WriteToFile {
 
-public class ToFile {
-    public static void writeToFile() throws IOException {
+    public static void writeToFile(String jsonForWrite) throws IOException {
         File myFile = new File("/Users/sergeygotovsky/Desktop/file.json");
         FileOutputStream fOut = new FileOutputStream(myFile);
         OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
-        myOutWriter.append(newUser());
+        myOutWriter.append(jsonForWrite);
         myOutWriter.close();
         fOut.close();
     }
